@@ -7,8 +7,10 @@ $cart = $_SESSION['cart'];
 function printCars(){
     global $cart;
     
-    if(empty($cart))
+    if(empty($cart)){
         echo "<tr><td>Cart is empty!</tr></td>";
+        echo "</table>";
+    }
     else{
         foreach($cart as $element ) 
             echo "<tr><td>" . $element . "</tr></td>";
@@ -30,16 +32,19 @@ function printCars(){
     
     <body>
         <main>
-            <h1 align="center">Laguna Seca Race Way Rentals</h1>
-            <form action="index.php">
-                <input type="submit" value="Return to Index" />
-            </form>
-            <br />
+            
+            <h1>Laguna Seca Race Way Rentals</h1>
             
             <!-- print cart -->
             <table align="center">
                 <th>Cars to Reserve</th>
                 <?=printCars()?>
+                
+            <!-- return home -->
+            <form action="index.php">
+                <input type="submit" value="Return to Index" />
+            </form>
+            
         </main>
     </body>
 </html>

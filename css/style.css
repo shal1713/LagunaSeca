@@ -3,6 +3,11 @@ h1{
     text-decoration:underline;
 }
 
+body{
+    background-color:black;
+    background: url("../images/background.jpeg");
+}
+
 table{
     border:1px solid;
     background: white;
@@ -16,6 +21,7 @@ main{
     margin:0 auto;
     text-align:center;
     width:1024px;
+    padding:10px;
     background:rgb(255, 255, 255);
     background:rgba(255, 255, 255, 0.7);
 }
@@ -23,16 +29,3 @@ main{
 .descriptionDiv{
     float:right;
 }
-
-body,h1 {
-          text-align: center;  
-          margin: 0 auto;
-          background: url("mario.png");
-         
-        }
-    table
-    {
-                  text-align: center;  
-          margin: 0 auto;
-        background: white;
-    }

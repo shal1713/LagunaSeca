@@ -48,6 +48,10 @@ function getSearch()
             $sql = $sql . " AND cartype LIKE :cartype";
             $namedParameters[':cartype'] = "%" . $_GET['carType'] . "%";
         }
+        
+        $sql = $sql . " ORDER BY model";
+        if($_GET['sort'] == "DESC")
+            $sql = $sql . " DESC";
     }
             
     $statement= $dbConn->prepare($sql); 
@@ -104,8 +108,8 @@ function getSearch()
                 </select>
                 List By Type In:
                 <select name="sort">
-                    <option value="asc">Ascending</option>
-                    <option value="desc">Descending</option>
+                    <option value="ASC">Ascending</option>
+                    <option value="DESC">Descending</option>
                 </select>
                 <input type="submit" name="filter" value="Search">
                 
@@ -122,6 +126,5 @@ function getSearch()
             </form>
         </main>
     </body>
-    
     
 </html>
