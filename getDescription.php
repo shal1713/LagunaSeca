@@ -4,6 +4,6 @@
         <title> </title>
     </head>
     <body>
-<p>.   Display Description Here</p>
+<p>Click a Car's Description for more information!</p>
     </body>
 </html>

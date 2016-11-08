@@ -1,32 +1,45 @@
-<br />
-<style>
-    body {
-        text-align: center;
-        margin: 0 auto;
-        background: url("images/mario.png");
-    }
-</style>
+<?php
 
-<body>
-    <h1 align="center">Laguna Seca Race Way Rentals</h1>
-    <form action="index.php">
-        <input type="submit" value="Return to Index" />
-    </form>
-    <form align="center" action="reserve.php">
-        <?php
-        session_start(); 
-        $cart = $_GET['cars'];
+session_start(); 
+$_SESSION['cart'] = $_GET['cars'];
+$cart = $_SESSION['cart'];
 
-
-
-        echo "<table border=1 cellspadding=20 align=center> ";
-        echo "<tr><th>Cars to Reserve</th></tr>";
-
-        foreach($cart as $element ) {
+function printCars(){
+    global $cart;
+    
+    if(empty($cart))
+        echo "<tr><td>Cart is empty!</tr></td>";
+    else{
+        foreach($cart as $element ) 
             echo "<tr><td>" . $element . "</tr></td>";
-        }
-        echo "</table><br>"
-        ?>
-            <input type="submit" value="Reserve" />
-    </form>
-</body>
+        echo "</table>
+            <form action='reserve.php'>
+            <input type='submit' value='Reserve' />
+            </form>";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="css/shopping_cart.css" type="text/css" />
+    </head>
+    
+    <body>
+        <main>
+            <h1 align="center">Laguna Seca Race Way Rentals</h1>
+            <form action="index.php">
+                <input type="submit" value="Return to Index" />
+            </form>
+            <br />
+            
+            <!-- print cart -->
+            <table align="center">
+                <th>Cars to Reserve</th>
+                <?=printCars()?>
+        </main>
+    </body>
+</html>

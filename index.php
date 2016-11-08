@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // to login
 $host = "localhost";
 $dbname = "laguna";
@@ -86,52 +88,39 @@ function getSearch()
         <title>Laguna Seca </title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
-<<<<<<< HEAD
-    <style>
-        body,h1 {
-          text-align: center;  
-          margin: 0 auto;
-          background: url("images/mario.png");
-        }
-    table {
-        text-align: center;  
-        margin: 0 auto;
-        background: white;
-    }
-    </style>
-=======
     
->>>>>>> 2949a459ac1cd7e1878e8fc5fe7e847098da4c05
     <body>
-        <form method="get">
-            <h1>Laguna Seca Race Way Rentals</h1>
-            Make: <input type="text" maxlength="13" placeholder="Enter Make" name="make">
-            Model: <input type="text" maxlength="10" placeholder="Enter Model" name="model">
-            Type:
-            <select name="type">
-                <option value="Super Car">Super Car</option>
-                <option value="Luxury">Luxury</option>
-                <option value="Economic">Economic</option>
-                <option value="Off Road">Off Road</option>
-            </select>
-            List By Type In:
-            <select name="sort">
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
-            </select>
-            <input type="submit" name="filter" value="Search">
-            
-        </form>
-        <br />
-        <div style="float:right">
-            <iframe name="DescriptioniFrame" align="none" src="getDescription.php" frameborder="0"> </iframe>
-        </div>
-        <form action="shopping_cart.php"> 
-        <?php
-        getSearch();
-        ?>
-        <input type="submit" name="reserve" value="Reserve">
-        </form>
+        <main>
+            <form method="get">
+                <h1>Laguna Seca Race Way Rentals</h1>
+                Make: <input type="text" maxlength="13" placeholder="Enter Make" name="make">
+                Model: <input type="text" maxlength="10" placeholder="Enter Model" name="model">
+                Type:
+                <select name="type">
+                    <option value="Super Car">Super Car</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Economic">Economic</option>
+                    <option value="Off Road">Off Road</option>
+                </select>
+                List By Type In:
+                <select name="sort">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+                <input type="submit" name="filter" value="Search">
+                
+            </form>
+            <br />
+            <div style="float:right">
+                <iframe name="DescriptioniFrame" align="none" src="getDescription.php" frameborder="0"> </iframe>
+            </div>
+            <form action="shopping_cart.php"> 
+            <?php
+            getSearch();
+            ?>
+            <input type="submit" name="reserve" value="Reserve">
+            </form>
+        </main>
     </body>
     
     
