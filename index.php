@@ -65,7 +65,7 @@ function getSearch()
       echo "<tr><th cellpadding=20 cellspacing= 50 colspan=6>" . "Results". "</th></tr>";
       foreach($records as $record) {
           echo "<tr><td><input type='checkbox' name=cars[]    value =" . $record['model'] . "></td>";
-          echo "<td cellspacing=10 ><a target='DescriptioniFrame' href='description/".$record['model'].".html' > Description </a></td>";
+          echo "<td cellspacing=10 ><a target='DescriptioniFrame' href='description/".$record['modelId'].".html' > Description </a></td>";
           echo "<td cellspacing=10 >" . $record['year'] . "</td><td cellspacing=10>" . $record['make'] . "</td><td cellpadding=20>". $record['model'] .  "</td><td cellspacing=10>". $record['cartype'] . "</td><tr>";
       }
       echo "<br></form>";
@@ -85,13 +85,11 @@ function getSearch()
         body,h1 {
           text-align: center;  
           margin: 0 auto;
-          background: url("mario.png");
-         
+          background: url("images/mario.png");
         }
-    table
-    {
-                  text-align: center;  
-          margin: 0 auto;
+    table {
+        text-align: center;  
+        margin: 0 auto;
         background: white;
     }
     </style>
@@ -114,7 +112,8 @@ function getSearch()
             </select>
             <input type="submit" value="Search">
             
-        </form>    
+        </form>
+        <br />
         <div style="float:right">
             <iframe name="DescriptioniFrame" align="none" src="getDescription.php" frameborder="0"> </iframe>
         </div>
